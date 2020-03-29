@@ -12,9 +12,9 @@ install_files:
 enable_services:
   - 'krb5-kdc'
   - 'krb5-admin-server'
-start_services:
+restart_services:
   - 'krb5-kdc'
   - 'krb5-admin-server'
-restart_services:
+start_services:
   - 'krb5-kdc'
   - 'krb5-admin-server'
