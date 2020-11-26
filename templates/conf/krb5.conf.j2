@@ -1,5 +1,6 @@
+{% set domainUpper = domain.upper() %}
 [libdefaults]
-  default_realm = NEURONPOINTER.NET
+  default_realm = {{ domainUpper }}
 
 # llowing krb5.conf variables are only for MIT Kerberos.
   kdc_timesync = 1
@@ -25,12 +26,12 @@
   fcc-mit-ticketflags = true
 
 [realms]
-  NEURONPOINTER.NET = {
-    kdc = kerberos.neuronpointer.net
-    admin_server = kerberos.neuronpointer.net
-    default_domain = neuronpointer.net
+  {{ domainUpper }} = {
+    kdc = kerberos.{{ domain }}
+    admin_server = kerberos.{{ domain }}
+    default_domain = {{ domain }}
   }
 
 [domain_realm]
-  .neuronpointer.net = NEURONPOINTER.NET
-  neuronpointer.net = NEURONPOINTER.NET
+  .{{ domain }} = {{ domainUpper }}
+  {{ domain }} = {{ domainUpper }}
