@@ -1,5 +1,5 @@
 ---
-- include_vars:         "../../../sensitive_ansible/roles/{{ role_name }}/vars/kdc_db_master_key.yml"
+- include_vars:         "../../../sensitive-ansible/roles/{{ role_name }}/vars/kdc_db_master_key.yml"
 - include:              '../tasks/install_packages.yml'
 - include:              '../tasks/install_files.yml'
 - include:              '../tasks/template_files.yml'
